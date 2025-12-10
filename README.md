@@ -1,3 +1,3 @@
-LdA Uploader
+QSO Uploader
 
-Aplicación para subir automáticamente QSO a LdA
+Aplicación para subir automáticamente QSO a diferentes plataformas
