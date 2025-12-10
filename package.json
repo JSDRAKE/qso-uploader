@@ -1,7 +1,7 @@
 {
-  "name": "lda-uploader",
-  "displayName": "LdA Uploader",
-  "description": "Aplicación para subir automáticamente QSO a LdA",
+  "name": "qso-uploader",
+  "displayName": "QSO Uploader",
+  "description": "Aplicación para subir automáticamente QSO a diferentes plataformas",
   "version": "1.0.0-beta",
   "main": "src/main/main.js",
   "type": "module",
@@ -37,8 +37,8 @@
     "axios": "^1.10.0"
   },
   "build": {
-    "appId": "com.jsdrake.ldauploader",
-    "productName": "LdA Uploader",
+    "appId": "com.jsdrake.qso-uploader",
+    "productName": "QSO Uploader",
     "directories": {
       "output": "dist/${version}"
     },
@@ -62,7 +62,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "LdA Uploader"
+      "shortcutName": "QSO Uploader"
     },
     "mac": {
       "category": "public.app-category.utilities",
