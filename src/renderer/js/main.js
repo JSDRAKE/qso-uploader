@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       };
 
       // Actualizar información básica
-      updateElement('appName', appInfo.name, 'LdA Uploader');
-      updateElement('appTitle', appInfo.name, 'LdA Uploader');
+      updateElement('appName', appInfo.displayName, 'QSO Uploader');
+      updateElement('appTitle', appInfo.displayName, 'QSO Uploader');
       updateElement('appVersion', `Versión ${appInfo.version}`, 'Versión 1.0.0');
       updateElement(
         'appDescription',
         appInfo.description,
-        'Aplicación para subir automáticamente QSO a LdA'
+        'Aplicación para subir automáticamente QSO a diferentes plataformas'
       );
       updateElement('appAuthor', appInfo.author, 'JSDRAKE - LU9WT');
 
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
           const url = new URL(appInfo.homepage);
           homepageText.textContent = url.hostname.replace('www.', '');
-          homepageLink.onclick = (e) => openExternalLink(e, appInfo.homepage);
+          homepageLink.onclick = e => openExternalLink(e, appInfo.homepage);
         } catch (e) {
           homepageText.textContent = 'Sitio web';
           homepageLink.style.display = 'none';
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       // Configurar email
       if (appInfo.email) {
         emailText.textContent = appInfo.email;
-        emailLink.onclick = (e) => openExternalLink(e, `mailto:${appInfo.email}`);
+        emailLink.onclick = e => openExternalLink(e, `mailto:${appInfo.email}`);
       } else {
         emailLink.style.display = 'none';
       }
@@ -97,14 +97,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (repoUrl.endsWith('.git')) {
           repoUrl = repoUrl.substring(0, repoUrl.length - 4);
         }
-        repoLink.onclick = (e) => openExternalLink(e, repoUrl);
+        repoLink.onclick = e => openExternalLink(e, repoUrl);
       } else {
         repoLink.style.display = 'none';
       }
 
       // Actualizar mensajes de información
       addInfoEntry(
-        `${appInfo.displayName || 'LdA Uploader'} iniciado - Versión: ${appInfo.version || '1.0.0'}`,
+        `${appInfo.displayName || 'QSO Uploader'} iniciado - Versión: ${appInfo.version || '1.0.0-beta'}`,
         'info'
       );
       addInfoEntry('Estado: Listo para operar', 'success');
@@ -112,10 +112,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.error('Error al cargar la información de la aplicación:', error);
       // Valores por defecto en caso de error
       const defaults = {
-        appName: 'LdA Uploader',
-        appTitle: 'LdA Uploader',
-        appVersion: 'Versión 1.0.0',
-        appDescription: 'Aplicación para subir automáticamente QSO a LdA',
+        appName: 'QSO Uploader',
+        appTitle: 'QSO Uploader',
+        appVersion: 'Versión 1.0.0-beta',
+        appDescription: 'Aplicación para subir automáticamente QSO a diferentes plataformas',
         appAuthor: 'JSDRAKE - LU9WT',
       };
 
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (element) element.textContent = value;
       });
 
-      addInfoEntry('LdA Uploader iniciado', 'info');
+      addInfoEntry('QSO Uploader iniciado', 'info');
       addInfoEntry('No se pudo cargar la información de la aplicación', 'warning');
     }
   }
